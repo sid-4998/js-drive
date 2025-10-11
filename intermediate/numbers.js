@@ -189,3 +189,6 @@ console.log(Number.NEGATIVE_INFINITY === -Infinity); // true
 let num22 = new Number(123);
 console.log(num22.MAX_VALUE); // undefined
 console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
+
+let num23 = 10000000;
+console.log(num23.toLocaleString('en-IN')); // Converts the number to Indian ruppee notation.

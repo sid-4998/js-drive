@@ -2,6 +2,7 @@
 
 // Creating a Date Object
 let currentDate = new Date();
+console.log(typeof currentDate); // object
 console.log("Current Date and Time:", currentDate);
 
 // Date get methods (Static)
@@ -23,6 +24,9 @@ console.log(currentDate.toDateString());
 console.log(currentDate.toTimeString());
 console.log(currentDate.toUTCString());
 console.log(currentDate.toISOString());
+console.log(currentDate.toLocaleString());
+console.log(currentDate.toLocaleDateString());
+console.log(currentDate.toLocaleTimeString());
 
 // Date set methods
 currentDate.setFullYear(2020);
@@ -34,4 +38,3 @@ currentDate.setSeconds(59); // 0-59
 currentDate.setMilliseconds(999); // 0-999
 
 console.log(currentDate.toString());
-
