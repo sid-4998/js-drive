@@ -292,3 +292,62 @@ const reversedMonths = month.toReversed();
 console.log(sortedMonths);
 console.log(reversedMonths);
 console.log(month); 
+
+// Array Iterations
+
+// forEach() method
+// The forEach() method calls a function(a callback function)
+// once for each array element
+
+const words = ['My', ' name', ' is', ' sid!'];
+let sentence = "";
+words.forEach((word) => {
+    sentence += word;
+});
+console.log(sentence);
+
+// The map() method
+// The map() method creates a new array by performing 
+// a function on each array element
+// map() method does not alters the original array
+// map() method does not execute the function for array 
+// elements without any values
+
+const numbers1 = [45, 4, 9, 16, 25];
+const numbers2 = numbers1.map(myFunction);
+
+function myFunction(value) {
+  return value * 2;
+}
+console.log(numbers2);
+
+// The filter() method
+// The filter() method creates a new array with elements that pass a test function
+
+const Above18 = numbers1.filter((value) => {
+    return value > 18;
+});
+console.log(Above18);
+
+// reduce() method
+// The reduce() method runs a function on each array element to produce a single value
+// It runs from left-to-right in the array
+
+let sum = numbers1.reduce((total,value) => {
+    return total + value;
+}, 100);
+
+// Here 100 is the initial value 
+console.log(sum);
+
+// The sum is 99 but due an initial value of 100 it adds upto 199
+// Just like reduce(), the reduceRight() method produces a single
+// value by executing a function on each array element.
+// The only-difference is that it runs from right-to-left in the array
+
+// The rest operator (...) allows us to destruct an array and collect the leftovers:
+let a, rest;
+const arr4 = [1,2,3,4,5,6,7,8];
+
+[a, ...rest] = arr4;
+console.log(rest);
