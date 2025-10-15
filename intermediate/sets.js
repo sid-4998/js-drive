@@ -69,6 +69,10 @@ for(const z of eIterator) {
 }
 console.log(text3);
 
+// clear() method
+letters.clear();
+console.log(letters);
+
 // Set Logic Methods
 
 // The union() method takes all the unique elements existing in both the sets
@@ -115,4 +119,5 @@ console.log(set1.isSupersetOf(set2));
 // in common with the argument set
 
 console.log(set1.isDisjointFrom(set2));
+
 
