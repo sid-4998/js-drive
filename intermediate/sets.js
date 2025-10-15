@@ -69,3 +69,50 @@ for(const z of eIterator) {
 }
 console.log(text3);
 
+// Set Logic Methods
+
+// The union() method takes all the unique elements existing in both the sets
+// And creates and returns a new set.
+const set1 = new Set(['a', 'b', 'c']);
+const set2 = new Set(['b', 'c', 'd']);
+
+const set3 = set1.union(set2);
+console.log(set3);
+
+// The intersection() method takes all the unique and common elements 
+// existing in both the sets
+
+const set4 = set1.intersection(set2);
+console.log(set4);
+
+// The difference() method returns a set with elements not present in the argument set
+const set5 = set1.difference(set2);
+console.log(set5);
+const set6 = set2.difference(set1);
+console.log(set6);
+
+// symmetricDifference() method
+// This method returns a set with elements formed by difference in elements
+// of both the sets
+
+const set7 = set1.symmetricDifference(set2);
+console.log(set7);
+
+// isSubsetOf() method
+// The isSubsetOf() method returns true if all elements in this set
+// is also elements in the argument set
+
+console.log(set1.isSubsetOf(set2));
+
+// isSupersetOf() method
+// The isSupersetOf() method returns true if all elements in 
+// the argument set are also in this set
+
+console.log(set1.isSupersetOf(set2));
+
+// isDisjointFrom() method
+// The isDisjointFrom() method returns true if this set has no elements 
+// in common with the argument set
+
+console.log(set1.isDisjointFrom(set2));
+
