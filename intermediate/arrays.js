@@ -172,8 +172,8 @@ console.log(spliced);
 console.log(splicedAgain);
 console.log(fruits);
 
-// The flatMap() method
-
+// Remaining Methods
+// flatMap(), from(), with(), every(), some(), entries(), keys().
 
 // Search Methods
 
