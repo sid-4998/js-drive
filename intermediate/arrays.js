@@ -212,3 +212,83 @@ console.log(index);
 
 let lastIndex = arr.findLastIndex(test);
 console.log(lastIndex);
+
+// Sorting Methods
+
+// The sort() method is used to sort the array in ascending order
+// The sort() method is generally used to sort an array of strings
+// The sort() method alters the original array
+
+const cars = ['volkswagon', 'mercedez', 'porche', 'lamborgini', 'bugati'];
+cars.sort();
+console.log(cars);
+
+// reverse() method
+// The reverse() method reverses the array elements
+// To sort an array in descending order we can use the reverse() method
+// followed by the sort() method
+
+cars.reverse();
+console.log(cars);
+
+
+// If we use the sort method to sort an arrays of numbers,
+// The method treats them as strings.
+// '25' > '100' as '2' comes after '1'
+
+// To solve this problem and sort an array of numbers,
+// a comparator function is used.
+
+const numericals = [40,1,23,56,78,35];
+
+function comparatorAscending(a, b) {
+    return a - b;
+}
+
+function comparatorDescending(a, b) {
+    return b - a;
+}
+
+// Here the sort() function compares two arguments to decide,
+// which argument should appear first in the sorted order
+// If the return of the comparator function is positive,
+// meaning a > b then b is sorted before a
+// If the return of the comparator function is negative,
+// meaning b > a then a is sorted before b
+// otherwise if the return is 0, no sorting occurs and the order
+// of those arguments remains same.
+
+numericals.sort(comparatorAscending);
+console.log(numericals);
+numericals.sort(comparatorDescending);
+console.log(numericals);
+
+// Finding the maximum and minimum element of the array
+let max = Math.max.apply(null,numericals);
+let min = Math.min.apply(null,numericals);
+console.log(max, min);
+
+// Sorting object arrays
+// The different objects inside the array are sorted based on their properties
+
+const car = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+
+car.sort(function comparator(a, b) {
+    return a.year - b.year;
+});
+
+console.log(car);
+
+// A safe way to sort and reverse an array is to use toSorted() and toReversed() methods
+// They do not alter the original array
+
+const month = ['January', 'February', 'March', 'April'];
+const sortedMonths = month.toSorted();
+const reversedMonths = month.toReversed();
+console.log(sortedMonths);
+console.log(reversedMonths);
+console.log(month); 
