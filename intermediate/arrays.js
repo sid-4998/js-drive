@@ -172,3 +172,43 @@ console.log(spliced);
 console.log(splicedAgain);
 console.log(fruits);
 
+// The flatMap() method
+
+
+// Search Methods
+
+// 1. indexOf() method (return type number)
+// 2. lastIndexOf() method (return type number)
+// 3. includes() method (return type boolean)
+// 4. find() method
+
+// The find() method returns the value of first array element that
+// satifies a test function
+
+const arr = [12,13,14,15,16,17,18,19,20];
+let item = arr.find(test);
+
+function test(value) {
+    return value > 16;
+}
+console.log(item);
+
+// findLast() method
+// The findLast() method returns the last array element that
+// satisfies a test function;
+let lastItem = arr.findLast(test);
+console.log(lastItem);
+
+// findIndex() method
+// The findIndex() method returns the index of the first element 
+// of the array that satifies a test function
+
+let index = arr.findIndex(test);
+console.log(index);
+
+// findLastIndex() method
+// The findLastIndex() method returns the last index of 
+// an array element that satisfies a test function
+
+let lastIndex = arr.findLastIndex(test);
+console.log(lastIndex);
