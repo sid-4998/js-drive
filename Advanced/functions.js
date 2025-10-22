@@ -44,3 +44,33 @@ numberOfArguments(2,3,4);
 
 // A function defined as the property of an object, is called a method to the object.
 // A function designed to create new objects, is called an object constructor.
+
+// Arrow functions
+// Arrow functions allow a shorter syntax for function expression
+// They do not require the function keyword
+// Curly braces and the return keyword can also be omitted
+// if the function has only a single statement that returns a value
+
+// Without Arrow 
+let hello = function() {
+    return 'Hello world!';
+};
+console.log(hello());
+// With Arrow
+let hi = () => 'Hi, fellas!';
+console.log(hi());
+
+// Arrow functions with parameters
+// If there is only 1 parameter we can skip the round braces as well
+
+let age = val => `I am ${val} years old`;
+console.log(age(23));
+
+let sum = (a, b) => a + b;
+console.log(sum(2,8));
+
+let profile = (role, company, experience) => {
+    console.log(`I have ${experience} months of relevant work experience`);
+    console.log(`I am a ${role} at ${company}`);
+}
+profile('Project Engineer', 'Wipro', 2);
