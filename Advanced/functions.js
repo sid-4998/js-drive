@@ -263,3 +263,56 @@ setTimeout(newPerson.display, 3000);
 // a callback to the same object.
 let newDisplay = newPerson.display.bind(newPerson);
 setTimeout(newDisplay, 5000);
+
+// Local variable
+// A local variable is a private variable defined inside a function
+// A function can access all its local variables
+
+// Global variables
+// A global variable is a public variable defined outside a function
+// A function can access all global variables
+// An undeclared variable(without let, const or var) is always a global 
+// variable even if it is defined inside a function
+// Global and local variables with a same name are different variables
+// Modifying one does not affect the other
+
+// Variable lifetime
+// Global variables live until the page is discarded, meaning
+// when you close the window or move to another page
+// Local variables live only inside a function or a scope
+
+// Javascript nested functions
+function add() {
+  let counter = 0;
+  function plus() {counter += 1;}
+  plus();   
+  return counter;
+}
+// In javascript each function is hoisted to the top of its scope.
+// Here the plus() function has access to the counter variable
+
+// What if we can access the plus() function outside its parent function add()?
+// This can be done using closures
+
+function myCounter() {
+  let counter = 0;
+  return function() {
+    counter++;
+    return counter;
+  };
+}
+const added = myCounter();
+console.log(added());
+console.log(added());
+console.log(added());
+console.log(added());
+// The variable added is assigned to the return value of the function myCounter()
+// The function myCounter() returns a function expression
+// Hence the variable added becomes a function itself
+// The added() function is called a closure
+// It allows functions to have private variables(counter)
+// The counter variable can only be changed by the closure 
+// Closures can be used to preserve state between function calls
+// Closures were used to simulate block scoping before let and const
+// Closures were also used to implement certain design patterns 
+// such as currying and memoization
