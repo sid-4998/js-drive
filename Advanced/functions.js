@@ -200,8 +200,10 @@ console.log(obj2.first);
 // A global function is a method of the global object
 
 const person = {
+    firstname: 'John',
+    lastname: 'Doe',
     fullname: function (city, country) {
-        return this.firstname + " " + this.lastname + ', ' + city + ", " + country; 
+        return this.firstname + " " + this.lastname + ", " + city + ", " + country;
     }
 }
 
@@ -228,3 +230,36 @@ console.log(person.fullname.call(person2, "Pune", "India"));
 
 const arr = ["Jamshedpur", "India"];
 console.log(person.fullname.apply(person1, arr));
+
+// The bind() method
+// The bind() method is used for function borrowing
+
+let fullName = person.fullname.bind(person1, "Jamshedpur", "India");
+console.log(fullName()); 
+
+// Here the bind() method borrows the fullname method of the person object
+// and uses it for person1 object and returns a function fullName,
+// which on being invoked performs the same operation on person1 object.
+
+// The bind() method is also used to preserve the value of this keyword
+// in case of an object method being used as a callback
+// When an object method is used as a callback the value of this is lost
+
+const newPerson = {
+    age: 23,
+    role: 'Software Engineer',
+    company: 'Google',
+    profile: function() {
+        return `I am ${this.age} years old and I work at ${this.company} as a ${this.role}`;
+    },
+    display: function() {
+        console.log(this.age, this.role, this.company);
+    }
+}
+console.log(newPerson.profile());
+setTimeout(newPerson.display, 3000);
+
+// This error can be solved by binding the method of the object used as 
+// a callback to the same object.
+let newDisplay = newPerson.display.bind(newPerson);
+setTimeout(newDisplay, 5000);
