@@ -137,3 +137,59 @@ console.log(findMax(1,23,144,56,789));
 // In Javascript Arguments are passed by value
 // The function only knows the values and not the argumrnt's location
 // Changes made to arguments are not visible outside the function
+
+// The this keyword
+// In Javascript, this keyword refers to different objects 
+// depending upon how it is used
+
+// Alone this refers to the global object
+// In an HTML page the global object is the page itself
+// In a browser the global object is the browser window
+// Hence a global function is also called a window function 
+let obj = this;
+console.log(obj);
+console.log(this);
+
+// The global object
+// When a function is invoked without an owner object then
+// the value of this is equal to the global object
+
+const obj1 = () => {
+    return this;
+}
+console.log(obj1());
+
+// Invoking a function as a method
+// In an object the this keyword refers to the object
+const myObj = {
+    firstname: 'John',
+    lastname: 'Doe',
+    fullname: function () {
+        return this.firstname + " " + this.lastname;
+    },
+    obj0: function() {
+        return this.fullname();
+    },
+    obj01: function() {
+        return this;
+    }
+};
+console.log(myObj.fullname());
+console.log(myObj.obj0());
+console.log(myObj.obj01());
+
+// In a function in strict-mode, this is undefined
+// Invoking a function with a constructor
+// When the function invocation is preceded with
+// the new keyword, its termed as constructor invocation
+
+function constructor(arg1, arg2) {
+    this.first = arg1;
+    this.last = arg2;
+    console.log(this);
+}
+
+const obj2 = new constructor("Sid", "Jha");
+// The this keyword in the constructor does not have a value.
+// The value of this will be the new object created when the function is invoked.
+console.log(obj2.first);
