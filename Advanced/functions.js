@@ -193,3 +193,27 @@ const obj2 = new constructor("Sid", "Jha");
 // The this keyword in the constructor does not have a value.
 // The value of this will be the new object created when the function is invoked.
 console.log(obj2.first);
+
+// The call() method
+// With call() method we can reuse a pre-written method for different objects
+// All javascript functions are methods
+// A global function is a method of the global object
+
+const person = {
+    fullname: function (city, country) {
+        return this.firstname + " " + this.lastname + ', ' + city + ", " + country; 
+    }
+}
+
+const person1 = {
+    firstname: "Siddhant",
+    lastname: "Jha"
+}
+
+const person2 = {
+    firstname: "Sarthak",
+    lastname: "Jha"
+}
+
+console.log(person.fullname.call(person1, "Jamshedpur", "India"));
+console.log(person.fullname.call(person2, "Pune", "India"));
