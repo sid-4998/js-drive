@@ -74,3 +74,66 @@ let profile = (role, company, experience) => {
     console.log(`I am a ${role} at ${company}`);
 }
 profile('Project Engineer', 'Wipro', 2);
+
+// Difference in function parameters and arguments
+// Parameters are names given to the arguments(real values) during
+// function declaration
+// Javascript function definitions do not specify the datatype of parameters
+// JavaScript functions do not perform type checking on the passed arguments
+// JavaScript functions do not check the number of arguments received.
+// If a function is called with missing arguments(less than declared)
+// then the missing values are set to be undefined
+
+function values(x, y) {
+    if(y == undefined) {
+        y = 2; // setting a default value
+    }
+    console.log(x, y);
+}
+
+values();
+values(2);
+values(2,3);
+
+function source(m, n = 12) {
+    console.log(m,n); // If value of n is not present let its default value be 12
+}
+source();
+source(3);
+source(4,5);
+
+// The rest(...) parameter
+// The rest(...) parameter allows the function to treat 
+// an indefinite number of arguments as an array
+
+const net = (...args) => {
+    let total = 0;
+    for(const arg of args) {
+        total += arg;
+    }
+    return total;
+};
+
+console.log(net(12,13,14,15,16,17,18,19,20));
+
+// The Arguments object
+// Javascript functions have a built in object called arguments
+// The arguments object contains an array of arguments at the time
+// of function call 
+
+function findMax() {
+  let max = -Infinity;
+  for (let i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+}
+
+console.log(findMax(1,23,144,56,789));
+// If a function is called with too many arguments (more than declared), 
+// these arguments can be reached using the arguments object
+// In Javascript Arguments are passed by value
+// The function only knows the values and not the argumrnt's location
+// Changes made to arguments are not visible outside the function
