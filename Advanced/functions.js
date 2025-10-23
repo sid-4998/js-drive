@@ -217,3 +217,14 @@ const person2 = {
 
 console.log(person.fullname.call(person1, "Jamshedpur", "India"));
 console.log(person.fullname.call(person2, "Pune", "India"));
+
+// The apply() method
+// The apply() method is similar to the call method but
+// the only difference is that the call() method takes its 
+// arguments seperately but the apply() method needs its 
+// arguments as an array
+// The apply() method can be used by passing an array as its argument
+// in case of a large list of arguments
+
+const arr = ["Jamshedpur", "India"];
+console.log(person.fullname.apply(person1, arr));
