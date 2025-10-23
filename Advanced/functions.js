@@ -276,10 +276,11 @@ setTimeout(newDisplay, 5000);
 // Global and local variables with a same name are different variables
 // Modifying one does not affect the other
 
-// Variable lifetime
+// Variable lifetime and lexical scoping
 // Global variables live until the page is discarded, meaning
 // when you close the window or move to another page
 // Local variables live only inside a function or a scope
+// The scope is established at compile time which is why it is also called static scoping
 
 // Javascript nested functions
 function add() {
@@ -316,3 +317,17 @@ console.log(added());
 // Closures were used to simulate block scoping before let and const
 // Closures were also used to implement certain design patterns 
 // such as currying and memoization
+
+// Immediately invoked function expression(IIFE)
+// Also known as self executing functions
+// Must end with a semicolon to continue execution of other IIFEs
+// Prevents global scope pollution
+// Used for one time code execution
+
+(function (name) {
+    console.log(name);
+})('Sid');
+
+((age) => {
+    console.log(`I am ${age} years old`)
+})(21);
