@@ -116,3 +116,52 @@ Person.prototype.ChangeCity = function(city) {
 myBrother.ChangeCity('Pune');
 console.log(myBrother.city);
 console.log(myFather.city);
+
+// Destructuring
+// The destructuring assignment syntax unpacks object property values into variables
+// The variable names should be identical to object properties
+// The order of variables does not matter
+// For missing properties we can set default values
+// We can also make aliases of variables
+
+let {age, eyeColor, hobby} = myFather;
+console.log(eyeColor, age, hobby);
+let {firstname: fn, lastname: ln, country = 'India'} = newPerson;
+// Here fn is an alias of variable firstname and likewise ln is an alias of lastname
+console.log(fn + " " + ln);
+console.log(country);
+
+// Destructuring can also be used to unpack other iterables such as 
+// arrays, strings, maps etc
+
+let actor = 'Mildred';
+let [s1, s2, s3, s4, s5, s6, s7] = actor;
+console.log(s1, s2, s3, s4, s5, s6, s7);
+
+const arr = [1,2,3,4,5,6,7,8];
+let [a, b,...rest] = arr;
+console.log(a,b);
+console.log(rest);
+
+// We can also skip some array values using commas
+let [c,,,,d] = arr;
+// c is the first element
+// d is element after 4 commas
+console.log(c, d);
+let [,,e,,f] = arr;
+console.log(e, f);
+// We can also destructure array elements at specific positions by using aliases
+let {[3]: fourth, [4]: fifth} = arr;
+console.log(fourth, fifth);
+
+// Destructuring maps
+const mapping = new Map(fruits);
+for(const [key, value] of mapping) {
+    console.log(key, value);
+}
+
+// Swapping variables
+let num1 = 2;
+let num2 = 3;
+[num1, num2] = [num2, num1];
+console.log(num1, num2);
