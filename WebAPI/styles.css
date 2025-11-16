@@ -1,0 +1,19 @@
+.type1 {
+    font-size: xx-large;
+}
+.btn-show {
+    background-color: yellow;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.btn-hide {
+    background-color: orange;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: none;
+}
+
+p {
+    font-size: 1rem;
+}
