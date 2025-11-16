@@ -165,3 +165,24 @@ let num1 = 2;
 let num2 = 3;
 [num1, num2] = [num2, num1];
 console.log(num1, num2);
+
+// Prototype inheritance
+// All javascript objects inherit their properties and methods 
+// from a prototype
+// Object.prototype is on top of the prototype inheritance chain
+
+// The Object.entries() method
+// This method returns an array of key-value pairs of an object's properties and methods
+
+const newArray = Object.entries(myFather);
+console.log(newArray);
+
+// The Object.keys() method
+// This method return an array of keys of an object
+
+console.log(Object.keys(myFather));
+
+// The Object.values() method
+// This method returns an array of property values of an object
+
+console.log(Object.values(myFather));
