@@ -13,7 +13,8 @@
  
 // Geoloaction API
 // It can provide the location(Latitude and Longitude of where 
-// is the browser is located)
+// the browser is located)
+
 let element = document.querySelector(".location");
 let showButton = document.querySelector(".btn-show");
 let hideButton = document.querySelector(".btn-hide");
